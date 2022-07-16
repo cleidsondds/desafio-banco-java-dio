@@ -17,11 +17,11 @@ O desafio tem como domínio/problema criar uma solução que deve oferecer aos c
 
 **1)    A primeira diretriz a ser mencionada é que a análise primária da solução levou em consideração cadastrar todos os dados em arquivos .txt. Com isso a solução mantém uma “persistência” de dados.**
 
->O objetivo era ter sempre uma forma de alimentar as List’s, que foram muitas declaradas, para ter uma base de dados consistente e que o usuário pudesse recuperar as >mesmas durante o uso da aplicação.
+>O objetivo era ter sempre uma forma de alimentar as List’s, que foram muitas declaradas, para ter uma base de dados consistente e que o usuário pudesse recuperar as mesmas durante o uso da aplicação.
 
 >A solução verifica se o arquivo .txt correspondente a função existe, se não cria o arquivo para que as operações possam ser realizadas sem “quebrar” o aplicativo.
 
->Uma das melhorias a ser implementada e criar um modelo lógico de tabelas, em um Sistema Gerenciador de Banco de Dados(SGBD), e persistir os dados na mesmas.
+>Uma das melhorias a ser implementada é criar um modelo lógico de tabelas, em um Sistema Gerenciador de Banco de Dados(SGBD), e persistir os dados na mesmas.
  
 
 **2)    A segunda diretriz é apresentar uma “interface”, não as da POO, que dá ao usuário uma lista, onde ele pode escolher qual operação deseja realizar.**
@@ -31,14 +31,14 @@ O desafio tem como domínio/problema criar uma solução que deve oferecer aos c
 
 >Está em no Main do programa, denominado de menuOperations.
 
-**3)    A terceira diretriz é que possui uma “interface” intermediária para operar as funções do sistema.**
+**3)    A terceira diretriz é que possui uma “interface” intermediária para operar as funções do sistema escolhida pelo usuário.**
 
->Nessa diretriz há as classes/métodos que operam as validações e realizam as solicitações determinados na análise da solução.
+>Nessa diretriz há as classes/métodos que operam as validações e realizam as solicitações determinadas na análise da solução.
 
 >Estão no pacote src.com.dio.options.
 
 **4)    A solução cadastra um único banco**
->No início da análise considerava a possibilidade de cadastrar vários bancos, mas, depois de analisar com mais objetividade cheguei à conclusão que estaria desenvolvendo um gerenciador financeiro pessoal. Com algumas modificações é possível desenvolver para esse fim. Porém, há muitas questões a serem identificadas, analisadas e implementadas antes. Então nesse momento, é uma solução para um único banco.
+>No início, a análise considerava a possibilidade de cadastrar vários bancos, mas, depois de analisar com mais objetividade cheguei à conclusão que estaria desenvolvendo um gerenciador financeiro pessoal. Com algumas modificações é possível desenvolver para esse fim. Porém, há muitas questões a serem identificadas, analisadas e implementadas antes. Então nesse momento, é uma solução para um único banco.
 
 >**4.1 - Atributos obrigatórios:**
 
@@ -52,7 +52,7 @@ O desafio tem como domínio/problema criar uma solução que deve oferecer aos c
 
 >**4.2 – Validações**
 
->>Informar o número e o nome do banco;
+>>Informar o número(um número inteiro) e o nome do banco;
 
 **5)    A solução deve cadastrar no mínimo uma agência**
 
@@ -64,15 +64,15 @@ O desafio tem como domínio/problema criar uma solução que deve oferecer aos c
 
 >>**5.1.1 - Número da Agência**
 
->>>Apesar da solução ser hipotética há que se mencionar que todo banco deve possuir uma agência, seja física ou digital.
+>>>Apesar da solução ser hipotética há que se mencionar que todo banco deve possuir uma agência, seja física ou digital. O número deve ser inteiro.
 
 >>**5.1.2 - Nome da Agência**
 
->>>Apesar da solução ser hipotética há que se mencionar que toda agência possui um nome. Apesar do número ser o atributo primário nas operações.
+>>>Apesar da solução ser hipotética a agência pode ter um nome. Minhas análises verificaram que bancos digitais, as chamadas fintechs, tem o número da agência mas, não tem o nome. O usuário pode estabelecer um nome para fins didáticos. O número é o atributo primário nas operações.
 
 >**5.2 – Validações**
 
->>Informar o número e o nome da agência;
+>>Informar o número(um número inteiro) e o nome da agência;
 
 >>Possuir um banco cadastrado;
 
@@ -80,7 +80,7 @@ O desafio tem como domínio/problema criar uma solução que deve oferecer aos c
  
 **6)    A solução deve cadastrar, no mínimo, um cliente.**
 
- >Banco sem cliente(s) é uma instituição falida. Mas, para a solução hipotética é obrigatório o cadastro de, no mínimo, um cliente.
+ >Banco sem cliente(s) é, quase, uma instituição falida. Mas, para a solução hipotética é obrigatório o cadastro de, no mínimo, um cliente.
  
 >**6.1 - Atributos obrigatórios:**
 
@@ -92,11 +92,11 @@ O desafio tem como domínio/problema criar uma solução que deve oferecer aos c
 
 >>**6.1.2 - Nome do Cliente**
 
->>>O nome do cliente.
+>>>Informar o nome do cliente.
 
 >**6.2 – Validações**
 
->>Informar o CPF e o nome do cliente;
+>>Informar o CPF (numérico) e o nome do cliente;
 
 >>Possuir, no mínimo, uma agência cadastrada;
 
@@ -104,18 +104,19 @@ O desafio tem como domínio/problema criar uma solução que deve oferecer aos c
  
 **7)    A solução deve cadastrar, no mínimo, duas contas mesmo que do mesmo cliente.**
 
->A solução, para atender a funcionalidade de transferência, deve cadastrar, no mínimo duas contas, mesmo que para o mesmo cliente.
+>A solução, para atender a funcionalidade de transferência deve cadastrar, no mínimo, duas contas mesmo que para o mesmo cliente.
 
->Não faz sentido uma funcionalidade de transferência entre contas, principalmente, pertencente a mesma instituição banco que possua somente uma conta.
+>Não faz sentido uma funcionalidade de transferência entre contas, que podem pertencer a mesma instituição banco, que possua somente uma conta.
 
 >**7.1 - Atributos obrigatórios:**
 
 >>**7.1.1 – Cliente cadastrado**
->>>Deve informar o CPF.
+
+>>>Deve informar o número do CPF.
 
 >>**7.1.2 – Número da Agência**
 
->>>A solução mostra as agências cadastradas quando o cliente é validado.
+>>>A solução mostra as agências cadastradas quando o cliente é validado pelo número do CPF.
 
 >>>O usuário deve informar o número da agência.
 
@@ -125,7 +126,7 @@ O desafio tem como domínio/problema criar uma solução que deve oferecer aos c
 
 >>**7.1.4 – Número da Conta**
 
->>>A solução gera um número aleatório de 5 (cinco) dígitos numéricos. É importante anotar para operar as outras funções.
+>>>A solução gera um número aleatório de 5 (cinco) dígitos numéricos. É importante anotar para operar as outras funcionalidades.
 
 >**7.2 – Validações**
 
@@ -133,9 +134,9 @@ O desafio tem como domínio/problema criar uma solução que deve oferecer aos c
 
 >>Verifica se tem cliente cadastrado.
 
->>Verificar se é cliente do Banco, através do CPF.
+>>Verifica se é cliente do Banco, através do CPF.
 
->>A agência informada está cadastrada;
+>>Verifica se a agência informada está cadastrada;
 
 **8)    A solução deve permitir operações de saque/depósito/transferência**
 
@@ -180,15 +181,15 @@ O desafio tem como domínio/problema criar uma solução que deve oferecer aos c
 
 >>>**8.2.1.1 – Número da Agência de Origem**
 
->>>>Número da agência de origem da operação.
+>>>>Informar número da agência de origem da operação.
 
 >>>**8.2.1.2 – Número da Conta de Origem**
 
->>>>Número da Conta de Origem da operação.
+>>>>Informar número da conta de origem da operação.
 
 >>>**8.2.1.3 – Valor da Operação**
 
->>>>Valor da operação, desde que atenda ao requisito 8.1.4.
+>>>>Informar o valor da operação, desde que atenda ao requisito 8.1.4.
 
 >>**8.2.2 – Para operações de transferência**
 
@@ -196,15 +197,15 @@ O desafio tem como domínio/problema criar uma solução que deve oferecer aos c
 
 >>>**8.2.2.2 – Número da Agência de destino**
 
->>>>Número da agência de destino da operação.
+>>>>Infomrar o número da agência de destino da operação.
 
 >>>**8.2.2.3 – Número da Conta de destino**
 
->>>>Número da Conta de destino da operação.
+>>>>Infomrar o número da Conta de destino da operação.
 
 >>>**8.2.2.4 – Valor da Operação**
 
->>>>Valor da operação, desde que atenda ao requisito 8.1.4.
+>>>>Infomrar o valor da operação, desde que atenda ao requisito 8.1.4.
 
 **9 ) Impressão de extrato**
 
@@ -220,8 +221,8 @@ O desafio tem como domínio/problema criar uma solução que deve oferecer aos c
 
 >**9.2 – Validações**
 
->>Verifica se tem agência cadastrada.
+>>Verificar se tem agência cadastrada.
 
->>Verifica se tem cliente cadastrado.
+>>Verificar se tem cliente cadastrado.
 
->>Verifica se a agência/conta informada existem.	
+>>Verificar se a agência/conta informada existem.	
