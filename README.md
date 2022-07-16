@@ -15,7 +15,7 @@ A solução foi desenvolvida utilizando o intellij IDEA community Edition 2022 -
 
 O desafio tem como domínio/problema criar uma solução que deve oferecer aos clientes dois tipos de conta sendo, conta corrente e poupança, as quais possuem as seguintes funcionalidades: depósito, saque, transferência e impressão de extrato. Todas as operações devem ser na própria instituição. Baseado na descrição do problema, fiz uma análise a parte e desenvolvi uma solução baseado na seguintes diretrizes:
 
-**1)    A primeira diretriz a ser mencionada é que a análise primária da solução levou em consideração cadastrar todas os dados em arquivos .txt. Com isso a solução mantém uma “persistência” de dados.**
+**1)    A primeira diretriz a ser mencionada é que a análise primária da solução levou em consideração cadastrar todos os dados em arquivos .txt. Com isso a solução mantém uma “persistência” de dados.**
 
 >O objetivo era ter sempre uma forma de alimentar as List’s, que foram muitas declaradas, para ter uma base de dados consistente e que o usuário pudesse recuperar as >mesmas durante o uso da aplicação.
 
